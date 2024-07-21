@@ -27,7 +27,7 @@ document.getElementById('autoClicker').addEventListener('click', () => {
                 updateCoinCount();
             }, autoClickerSpeed);
         } else {
-            autoClickerSpeed -= 10; // Decrease interval time by 100ms
+            autoClickerSpeed -= 1; // Decrease interval time by 100ms
             clearInterval(autoClickerInterval);
             autoClickerInterval = setInterval(() => {
                 coins += clickValue;
