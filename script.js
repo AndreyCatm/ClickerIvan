@@ -1,6 +1,6 @@
 let coins = 0;
 let clickValue = 1;
-let autoClickerSpeed = 100; // Initial auto-clicker speed in ms
+let autoClickerSpeed = 1; // Initial auto-clicker speed in ms
 let autoClickerInterval = null;
 let isModerator = false;
 let isAdmin = false;
