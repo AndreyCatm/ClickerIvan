@@ -13,7 +13,7 @@ document.getElementById('clickerBtn').addEventListener('click', () => {
 document.getElementById('addClick').addEventListener('click', () => {
     if (coins >= 50) {
         coins -= 50;
-        clickValue += 1;
+        clickValue += 2;
         updateCoinCount();
     }
 });
