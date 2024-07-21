@@ -13,12 +13,14 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 80%;
+    width: 90%;
+    max-width: 1200px;
 }
 
 .header {
     text-align: center;
     margin-bottom: 20px;
+    flex-basis: 100%;
 }
 
 .main {
@@ -54,9 +56,39 @@ body {
     padding: 10px;
     margin: 5px 0;
     cursor: pointer;
+    border-radius: 10px;
     transition: background-color 0.3s ease;
 }
 
 .upgrade-btn:hover {
     background-color: #383838;
+}
+
+.upgrade-btn:disabled {
+    background-color: #FF6347;
+    cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sidebar {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .upgrade-btn {
+        flex: 1 1 calc(50% - 10px);
+        margin: 5px;
+    }
+
+    #clickerBtn img {
+        width: 150px;
+        height: 150px;
+    }
 }
