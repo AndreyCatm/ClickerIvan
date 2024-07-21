@@ -1,6 +1,8 @@
 let coins = 0;
 let clickValue = 1;
 let autoClickerInterval = null;
+let isModerator = false;
+let isAdmin = false;
 
 document.getElementById('clickerBtn').addEventListener('click', () => {
     coins += clickValue;
@@ -10,8 +12,7 @@ document.getElementById('clickerBtn').addEventListener('click', () => {
 document.getElementById('doubleClicks').addEventListener('click', () => {
     if (coins >= 50) {
         coins -= 50;
-        clickValue *= 2;
-        this.innerHTML = `Удвоить клики (${50 * (clickValue / 2)} монет)`;
+        clickValue += 1;
         updateCoinCount();
     }
 });
@@ -36,17 +37,21 @@ document.getElementById('autoClicker').addEventListener('click', () => {
 });
 
 document.getElementById('moderator').addEventListener('click', () => {
-    if (coins >= 10000) {
+    if (!isModerator && coins >= 10000) {
         coins -= 10000;
         clickValue *= 50;
+        isModerator = true;
+        document.getElementById('moderator').disabled = true;
         updateCoinCount();
     }
 });
 
 document.getElementById('admin').addEventListener('click', () => {
-    if (coins >= 100000) {
+    if (!isAdmin && coins >= 100000) {
         coins -= 100000;
         clickValue *= 100;
+        isAdmin = true;
+        document.getElementById('admin').disabled = true;
         updateCoinCount();
     }
 });
