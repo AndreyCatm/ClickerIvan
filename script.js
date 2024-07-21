@@ -40,7 +40,7 @@ document.getElementById('farmer').addEventListener('click', () => {
     if (coins >= 2000) {
         coins -= 2000;
         farmerInterval = setInterval(() => {
-            coins += 800;
+            coins += 3000;
             updateCoinCount();
         }, 60000); // 1 minute interval
         document.getElementById('farmer').disabled = true;
@@ -51,7 +51,7 @@ document.getElementById('farmer').addEventListener('click', () => {
 document.getElementById('moderator').addEventListener('click', () => {
     if (!isModerator && coins >= 10000) {
         coins -= 10000;
-        clickValue += 50; // Increase click value by 50
+        clickValue += 500; // Increase click value by 50
         isModerator = true;
         document.getElementById('moderator').disabled = true;
         updateCoinCount();
@@ -61,7 +61,7 @@ document.getElementById('moderator').addEventListener('click', () => {
 document.getElementById('admin').addEventListener('click', () => {
     if (!isAdmin && coins >= 100000) {
         coins -= 100000;
-        clickValue += 100; // Increase click value by 100
+        clickValue += 5000; // Increase click value by 100
         isAdmin = true;
         document.getElementById('admin').disabled = true;
         updateCoinCount();
